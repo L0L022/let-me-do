@@ -4,7 +4,7 @@ Ce programme est là pour faciliter la vie des gens (et surtout la mienne) qui d
 
 ## Installation
 
-Tu télécharges [le let_me_do.zip](https://github.com/L0L022/let_me_do/archive/master.zip), tu extrais le zip, tu ouvres un terminal dans le dossier où tu as extrais le zip (partie la plus ardue !) et tu fais un petit:
+Tu télécharges le [let_me_do.zip](https://github.com/L0L022/let_me_do/archive/master.zip), tu extrais le zip, tu ouvres un terminal dans le dossier où tu as extrais le zip (partie la plus ardue !) et tu fais un petit:
 
 ```bash
 sudo bash install.bash
