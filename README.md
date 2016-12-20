@@ -14,7 +14,7 @@ Là ça risque de te poser des questions parce qu'il y a sûrement des programme
 
 ## Lancement
 
-L'application s'appelle *Laisse moi faire !*, si le menu est rangé par catégorie elle doit être dans Internet.
+L'application s'appelle ***Laisse moi faire !***, si le menu est rangé par catégorie elle doit être dans Internet.
 
 Ou depuis un terminal:
 
@@ -22,7 +22,13 @@ Ou depuis un terminal:
 let_me_do
 ```
 
-Une fenêtre devrait s'ouvrir avec une barre de chargement. Il suffit d'attendre. Trop facile.
+Une fenêtre devrait s'ouvrir avec une barre de chargement:
+
+![screenshot_loading.png](screenshot_loading.png)
+
+Le **mot de passe administrateur** vous serra demandé. Ensuite il suffit d'attendre. Trop facile. Si tout ce passe bien la fenêtre devrait ressembler à ça (les numéros changent):
+
+![screenshot_done.png](screenshot_done.png)
 
 ## Qu'est ce que ça fait au juste ?
 
@@ -35,6 +41,7 @@ Une fois connecté il pourra faire absolument tout ce qu'il veut de l'ordinateur
 Très facile, il faut cliquer sur le gros bouton: Couper l'accès.
 
 Si la personne auquel vous avez donné accés à l'ordi vous empèche d'appuyer sur le gros bouton essayez de:
+
 - rabattre l'écran en espérant que l'ordi se mette en veille
 - débrancher le routeur
 - forcer l'arrêt, tout simplement (hannah's way)
