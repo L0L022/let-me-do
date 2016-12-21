@@ -1,12 +1,12 @@
 #!/bin/bash
 
 tmp_file_name="/tmp/let_me_do"
-tmp_file_content="$(cat "$tmp_file_name")"
+tmp_file_content="$(cat "$tmp_file_name" 2>/dev/null)"
 
 if [ -z "$tmp_file_content" ]; then
   echo "$PPID" > "$tmp_file_name"
 else
-  if ! zenity --title="Attention" --question --text="L'application est déjà ouverte" --ok-label="Ok" --cancel-label="Ouvrir quand même"; then
+  if zenity --title="Attention" --question --text="L'application est déjà ouverte" --ok-label="Ok" --cancel-label="Ouvrir quand même" 2>/dev/null; then
     exit
   else
     echo "$PPID" > "$tmp_file_name"
@@ -33,8 +33,9 @@ function begin_root {
 
   increase 4 5
   echo "# Ajout de l'utilisateur let_me_do"
-  if ! useradd -r -G wheel -s /bin/bash let_me_do; then
-    problem "Impossible d'ajouter l'utilisateur let_me_do"
+  group="$(grep "^%.* ALL=(ALL) ALL$" /etc/sudoers | sed "s/^%\(.*\) ALL=(ALL) ALL$/\1/g")"
+  if [ -z "$group" ] || ! useradd -r -G "$group" -s /bin/bash let_me_do; then
+    problem "Impossible d'ajouter l'utilisateur let_me_do (group: $group)"
     exit
   fi
   echo "let_me_do:$password" | chpasswd
@@ -79,8 +80,10 @@ if ! upnpc -e "vnc session of $USER on $computer_name" -a "$local_ip" "$port_vnc
   exit
 fi
 
-pkexec bash -c "port_ssh=$port_ssh;password=$password;\
-#$(type increase);#$(type problem);#$(type begin_root);begin_root"
+if ! pkexec bash -c "port_ssh=$port_ssh;password=$password;#$(type increase);#$(type problem);#$(type begin_root);begin_root"; then
+  problem "Échec de l'accès administrateur"
+  exit
+fi
 
 echo "# Ouverture de x11vnc"
 x11vnc -display "$DISPLAY" -autoport "$port_vnc" -passwd "$password" -forever -noxdamage -ssl TMP -gui tray -ncache 10 > /dev/null 2>&1 &
@@ -91,7 +94,7 @@ echo -n "ssh let_me_do@$internet_ip -p $port_ssh psswd: $password" | xclip -sele
 increase 5 5
 echo "# Votre machine est maintenant accessible depuis internet à l'adresse suivante:\\n$internet_ip:$port_ssh\\nLe mot de passe: $password\\nL'adresse et le mot de passe viennent d'être copié dans le presse papier, plus qu'à envoyer."
 echo "100"
-) | zenity --title="$title" --width=600 --progress --no-cancel --ok-label="Couper l'accès"
+) | zenity --title="$title" --width=600 --progress --no-cancel --ok-label="Couper l'accès" 2>/dev/null
 
 (
 echo "# Fermeture de x11vnc"
@@ -107,4 +110,4 @@ pkexec bash -c "port_ssh=$port_ssh;#$(type end_root);end_root"
 
 echo "" > "$tmp_file_name"
 echo "100"
-) | zenity --title="$title" --width=200 --progress --pulsate --auto-close --no-cancel
+) | zenity --title="$title" --width=200 --progress --pulsate --auto-close --no-cancel 2>/dev/null
