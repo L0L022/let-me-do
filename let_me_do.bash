@@ -34,11 +34,25 @@ function begin_root {
   increase 4 5
   echo "# Ajout de l'utilisateur let_me_do"
   group="$(grep "^%.* ALL=(ALL) ALL$" /etc/sudoers | sed "s/^%\(.*\) ALL=(ALL) ALL$/\1/g")"
-  if [ -z "$group" ] || ! useradd -r -G "$group" -s /bin/bash let_me_do; then
-    problem "Impossible d'ajouter l'utilisateur let_me_do (group: $group)"
+  if [ -z "$group" ]; then
+    problem "Impossible de trouver le groupe administrateur"
     exit
   fi
-  echo "let_me_do:$password" | chpasswd
+  if ! grep -q "^$group:.*" /etc/group; then
+    echo "# Création du groupe: $group"
+    if ! groupadd -r "$group"; then
+      problem "Impossible de créer le groupe: $group"
+      exit
+    fi
+  fi
+  if ! useradd -r -N -G "$group" -s /bin/bash let_me_do; then
+    problem "Impossible d'ajouter l'utilisateur let_me_do"
+    exit
+  fi
+  if ! echo "let_me_do:$password" | chpasswd; then
+    problem "Impossible de changer le mot de passe de l'utilisateur let_me_do"
+    exit
+  fi
 }
 
 function end_root {
