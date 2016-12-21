@@ -11,10 +11,15 @@ case $1 in
     mkdir -p /usr/local/bin/ /usr/local/share/applications/
     cp let_me_do.bash /usr/local/bin/let_me_do
     cp let_me_do.desktop /usr/local/share/applications/
+    update-desktop-database
+    echo "fini !"
     ;;
   uninstall)
     rm /usr/local/bin/let_me_do.bash /usr/local/share/applications/let_me_do.desktop
+    update-desktop-database
+    echo "fini !"
+    ;;
+  *)
+    echo "option inconnue"
     ;;
 esac
-update-desktop-database
-echo "fini !"
