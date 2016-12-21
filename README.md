@@ -7,10 +7,16 @@ Ce programme est là pour faciliter la vie des gens (et surtout la mienne) qui d
 Tu télécharges le [let_me_do.zip](https://github.com/L0L022/let_me_do/archive/master.zip), tu extrais le zip, tu ouvres un terminal dans le dossier où tu as extrais le zip (partie la plus ardue !) et tu fais un petit:
 
 ```bash
-sudo bash install.bash
+sudo bash install.bash install
 ```
 
 Là ça risque de te poser des questions parce qu'il y a sûrement des programmes à installer, donc on dit oui et on attends.
+
+Pour désinstaller:
+
+```bash
+sudo bash install.bash uninstall
+```
 
 ## Lancement
 
@@ -26,7 +32,7 @@ Une fenêtre devrait s'ouvrir avec une barre de chargement:
 
 ![screenshot_loading.png](screenshot_loading.png)
 
-Le **mot de passe administrateur** vous serra demandé. Ensuite il suffit d'attendre. Trop facile. Si tout ce passe bien la fenêtre devrait ressembler à ça (les numéros changent):
+Le **mot de passe administrateur** vous serra demandé. Ensuite il suffit d'attendre. Trop facile. Si tout se passe bien la fenêtre devrait ressembler à ça (les numéros changent):
 
 ![screenshot_done.png](screenshot_done.png)
 
@@ -34,7 +40,7 @@ Le **mot de passe administrateur** vous serra demandé. Ensuite il suffit d'atte
 
 Le script va permettre à quelqu'un d'autre de se connecter à ton ordinateur depuis les internet. Pour ça il faudra lui donner ton **adresse ip** et le **mot de passe** atribué au hasard.
 
-Une fois connecté il pourra faire absolument tout ce qu'il veut de l'ordinateur, car il aura les droits administrateurs. Il faut aussi noter qu'il pourra voir l'écran et bouger la sourie. En somme c'est comme si il était vraiment là.
+Une fois connecté il pourra faire absolument tout ce qu'il veut de l'ordinateur, car il aura les **droits administrateurs**. Il faut aussi noter qu'il pourra **voir l'écran** et **bouger la sourie**. En somme c'est comme si il était vraiment là.
 
 ## Comment on arrête ?
 
