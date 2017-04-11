@@ -1,8 +1,8 @@
 [Desktop Entry]
 Version=1.0
-Name=Let me do !
-Name[fr]=Laisse moi faire !
-Exec=let_me_do
+Name=Let me do
+Name[fr]=Laisse moi faire
+Exec=pkexec "@LET_ME_DO_PATH@"
 Icon=preferences-desktop-remote-desktop
 Terminal=false
 Type=Application
