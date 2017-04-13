@@ -12,16 +12,16 @@ case $1 in
     fi
     systemctl enable sshd.service
     systemctl start sshd.service
-    cmake . -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX:PATH=/usr -B../let_me_do-build
-    cd ../let_me_do-build || exit
+    cmake . -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX:PATH=/usr -B../let-me-do-build
+    cd ../let-me-do-build || exit
     make
     make install
     update-desktop-database
     echo "done !"
     ;;
   uninstall)
-    cmake . -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX:PATH=/usr -B../let_me_do-build
-    cd ../let_me_do-build || exit
+    cmake . -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX:PATH=/usr -B../let-me-do-build
+    cd ../let-me-do-build || exit
     make
     make uninstall
     update-desktop-database

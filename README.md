@@ -1,10 +1,10 @@
-# let_me_do
+# let-me-do
 
 Ce programme est là pour faciliter la vie des gens (et surtout la mienne) qui doivent faire de la maintenance, à distance, sur des postes sous Linux. Parce qu'on peut se dire qu'envoyer des commandes à copier coller dans un terminal ou même les dicter par téléphone c'est simple et rapide à faire. Mais pas du tout. Il y a toujours un problème et ce qui aurait du mettre 10 minutes (grand maximum) pour nous, prendra une heure avec un intermèdiaire lambda.
 
 ## Installation
 
-Tu télécharges le [let_me_do.zip](https://github.com/L0L022/let_me_do/archive/master.zip), tu extrais le zip, tu ouvres un terminal dans le dossier où tu as extrais le zip (partie la plus ardue !) et tu fais un petit:
+Tu télécharges le [let-me-do.zip](https://github.com/L0L022/let-me-do/archive/master.zip), tu extrais le zip, tu ouvres un terminal dans le dossier où tu as extrais le zip (partie la plus ardue !) et tu fais un petit:
 
 ```bash
 sudo bash install.bash install
@@ -25,7 +25,7 @@ L'application s'appelle ***Laisse moi faire !***, si le menu est rangé par cat�
 Ou depuis un terminal:
 
 ```bash
-let_me_do
+let-me-do
 ```
 
 Une fenêtre devrait s'ouvrir avec une barre de chargement:

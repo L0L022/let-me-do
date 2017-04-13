@@ -1,7 +1,7 @@
 #!/bin/bash
 source gettext.sh
 
-TEXTDOMAIN="let_me_do"
+TEXTDOMAIN="let-me-do"
 export TEXTDOMAIN
 TEXTDOMAINDIR="@LOCALE_PATH@"
 export TEXTDOMAINDIR
@@ -15,7 +15,7 @@ if [ "$USER" != "root" ]; then
   exit 1
 fi
 
-tmp_file_name="/tmp/let_me_do"
+tmp_file_name="/tmp/let-me-do"
 tmp_file_content="$(cat "$tmp_file_name" 2>/dev/null)"
 
 if [ -z "$tmp_file_content" ]; then
@@ -98,11 +98,11 @@ if ! grep -q "^$group:.*" /etc/group; then
   fi
 fi
 gettext "# Adding the user Let Me Do"; echo
-if ! useradd -r -N -G "$group" -s /bin/bash -c "$APP_NAME" let_me_do; then
+if ! useradd -r -N -G "$group" -s /bin/bash -c "$APP_NAME" let-me-do; then
   problem "$(gettext "Adding the user Let Me Do failed")"
   exit 10
 fi
-if ! echo "let_me_do:$password" | chpasswd; then
+if ! echo "let-me-do:$password" | chpasswd; then
   problem "$(gettext "Changing Let Me Do's password failed")"
   exit 11
 fi
@@ -111,7 +111,7 @@ gettext "# Starting desktop sharing (x11vnc)"; echo
 x11vnc -display "$DISPLAY" -autoport "$port_vnc" -passwd "$password" -forever -noxdamage -ssl TMP -gui tray -ncache 10 > /dev/null 2>&1 &
 
 gettext "# Copying of information in the clipboard"; echo
-echo -n "ssh let_me_do@$internet_ip -p $port_ssh psswd: $password" | xclip -selection "clipboard"
+echo -n "ssh let-me-do@$internet_ip -p $port_ssh psswd: $password" | xclip -selection "clipboard"
 
 increase 5 5
 eval_gettext "# Your computer is now accessible from the Internet.\nIP address: \$internet_ip\nPassword: \$password\nSSH port: \$port_ssh\nVNC port: \$port_vnc\nThe information required for the connection just be copied to the clipboard."; echo
@@ -133,7 +133,7 @@ eval_gettext "# Removing SSH port (\$port_ssh) redirection"; echo
 iptables -t nat -D PREROUTING -p tcp --dport "$port_ssh" -j REDIRECT --to-port 22
 
 gettext "# Deleting user Let Me Do"; echo
-userdel let_me_do
+userdel let-me-do
 
 echo "" > "$tmp_file_name"
 echo "100"

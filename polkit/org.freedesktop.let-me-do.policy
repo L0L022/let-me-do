@@ -4,9 +4,9 @@
  "http://www.freedesktop.org/standards/PolicyKit/1/policyconfig.dtd">
 <policyconfig>
 	<vendor>Let Me Do</vendor>
-	<vendor_url>https://github.com/L0L022/let_me_do</vendor_url>
+	<vendor_url>https://github.com/L0L022/let-me-do</vendor_url>
 
-	<action id="org.freedesktop.pkexec.let_me_do">
+	<action id="org.freedesktop.pkexec.let-me-do">
     <description>Run Let Me Do</description>
 		<description xml:lang="fr">Démarrer Laisse Moi Faire</description>
 		<message>Authentication is required to run Let Me Do</message>
@@ -17,7 +17,7 @@
 			<allow_inactive>auth_admin</allow_inactive>
 			<allow_active>auth_admin</allow_active>
 		</defaults>
-    <annotate key="org.freedesktop.policykit.exec.path">@LET_ME_DO_PATH@</annotate>
+    <annotate key="org.freedesktop.policykit.exec.path">@LET-ME-DO_PATH@</annotate>
 		<annotate key="org.freedesktop.policykit.exec.allow_gui">true</annotate>
 	</action>
 
