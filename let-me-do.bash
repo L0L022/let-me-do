@@ -110,8 +110,18 @@ fi
 gettext "# Starting desktop sharing (x11vnc)"; echo
 x11vnc -display "$DISPLAY" -autoport "$port_vnc" -passwd "$password" -forever -noxdamage -ssl TMP -gui tray -ncache 10 > /dev/null 2>&1 &
 
+information="ssh let_me_do@$internet_ip -p $port_ssh psswd: $password"
+
 gettext "# Copying of information in the clipboard"; echo
-echo -n "ssh let-me-do@$internet_ip -p $port_ssh psswd: $password" | xclip -selection "clipboard"
+echo -n "$information" | xclip -selection "clipboard"
+
+gettext "# Wait for reply to if you want to send an email to your master (s)"; echo
+if [ -e "$HOME/.let_me_do_masters" ]; then
+  masters="$(cat "$HOME/.let_me_do_masters")"
+  if zenity --title="$APP_NAME" --question --icon-name="emblem-mail" --text="$(gettext "Would you like to send your connection information by email to your master(s) ?")"; then
+    xdg-open "mailto:$masters?subject=Let Me Do at $HOSTNAME&body=$information" &
+  fi
+fi
 
 increase 5 5
 eval_gettext "# Your computer is now accessible from the Internet.\nIP address: \$internet_ip\nPassword: \$password\nSSH port: \$port_ssh\nVNC port: \$port_vnc\nThe information required for the connection just be copied to the clipboard."; echo
