@@ -8,6 +8,16 @@ export TEXTDOMAINDIR
 
 APP_NAME="$(gettext "Let Me Do")"
 
+function set_home {
+  if [ "$1" ]; then
+   HOME="$(grep "^.*:.*:$1:.*$" /etc/passwd|cut -f6 -d":")"
+   export HOME
+  fi
+}
+
+set_home "$SUDO_UID"
+set_home "$PKEXEC_UID"
+
 if [ "$USER" != "root" ]; then
   message="$(gettext "You must be logged as root")"
   zenity --title="$APP_NAME" --error --text="$message"
