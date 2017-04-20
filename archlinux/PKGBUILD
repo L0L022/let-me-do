@@ -6,9 +6,8 @@ pkgdesc="Let someone else take control of your computer"
 arch=('any')
 url="https://l0l022.github.io/let-me-do/"
 license=('GPL3')
-depends=('polkit' 'openssh' 'iptables' 'xclip' 'zenity' 'miniupnpc' 'x11vnc' 'gettext')
+depends=('polkit' 'openssh' 'iptables' 'xclip' 'zenity' 'miniupnpc' 'x11vnc' 'gettext' 'xdg-utils')
 makedepends=('cmake' 'git')
-optdepends=('xdg-utils: for send mail')
 source=("$pkgname"::"git+https://github.com/L0L022/let-me-do.git")
 md5sums=('SKIP')
 

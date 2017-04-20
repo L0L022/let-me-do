@@ -11,15 +11,15 @@ Vcs-Browser: https://github.com/L0L022/let-me-do
 Package: let-me-do
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends},
-         policykit,
+         policykit-1,
          openssh-server,
          iptables,
          xclip,
          zenity,
          miniupnpc,
          x11vnc,
-         gettext
-Suggests: x11-utils
+         gettext,
+         x11-utils
 Description: Let someone else take control of your computer
  This software makes it easy to remotely support Linux-based workstations.
  .
