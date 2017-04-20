@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: let-me-do 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/L0L022/let-me-do/issues\n"
-"POT-Creation-Date: 2017-04-11 15:57+0200\n"
+"POT-Creation-Date: 2017-04-19 13:49+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -105,11 +105,21 @@ msgstr ""
 msgid "# Starting desktop sharing (x11vnc)"
 msgstr ""
 
-#: ../let-me-do.bash:113
+#: ../let-me-do.bash:115
 msgid "# Copying of information in the clipboard"
 msgstr ""
 
-#: ../let-me-do.bash:117
+#: ../let-me-do.bash:118
+msgid "# Wait for reply to if you want to send an email to your master (s)"
+msgstr ""
+
+#: ../let-me-do.bash:121
+msgid ""
+"Would you like to send your connection information by email to your "
+"master(s) ?"
+msgstr ""
+
+#: ../let-me-do.bash:127
 #, sh-format
 msgid ""
 "# Your computer is now accessible from the Internet.\\nIP address: "
@@ -118,29 +128,29 @@ msgid ""
 "the clipboard."
 msgstr ""
 
-#: ../let-me-do.bash:120
+#: ../let-me-do.bash:130
 msgid "Close Let Me Do"
 msgstr ""
 
-#: ../let-me-do.bash:123
+#: ../let-me-do.bash:133
 msgid "# Shutting down desktop sharing (x11vnc)"
 msgstr ""
 
-#: ../let-me-do.bash:126
+#: ../let-me-do.bash:136
 #, sh-format
 msgid "# Closing the SSH port ($port_ssh) on the router"
 msgstr ""
 
-#: ../let-me-do.bash:129
+#: ../let-me-do.bash:139
 #, sh-format
 msgid "# Closing the VNC port ($port_vnc) on the router"
 msgstr ""
 
-#: ../let-me-do.bash:132
+#: ../let-me-do.bash:142
 #, sh-format
 msgid "# Removing SSH port ($port_ssh) redirection"
 msgstr ""
 
-#: ../let-me-do.bash:135
+#: ../let-me-do.bash:145
 msgid "# Deleting user Let Me Do"
 msgstr ""
