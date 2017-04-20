@@ -125,11 +125,13 @@ information="ssh let_me_do@$internet_ip -p $port_ssh psswd: $password"
 gettext "# Copying of information in the clipboard"; echo
 echo -n "$information" | xclip -selection "clipboard"
 
-gettext "# Wait for reply to if you want to send an email to your master (s)"; echo
 if [ -e "$HOME/.let_me_do_masters" ]; then
   masters="$(cat "$HOME/.let_me_do_masters")"
-  if zenity --title="$APP_NAME" --question --icon-name="emblem-mail" --text="$(gettext "Would you like to send your connection information by email to your master(s) ?")"; then
-    xdg-open "mailto:$masters?subject=Let Me Do at $HOSTNAME&body=$information" &
+  if [ "$masters" ]; then
+    gettext "# Wait for reply to if you want to send an email to your master (s)"; echo
+    if zenity --title="$APP_NAME" --question --icon-name="emblem-mail" --text="$(gettext "Would you like to send your connection information by email to your master(s) ?")"; then
+      xdg-open "mailto:$masters?subject=Let Me Do at $HOSTNAME&body=$information" &
+    fi
   fi
 fi
 
