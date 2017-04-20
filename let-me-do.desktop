@@ -2,10 +2,12 @@
 Version=1.0
 Name=Let me do
 Name[fr]=Laisse moi faire
+GenericName=Remote administration software
+GenericName[fr]=Logiciel d'administration à distance
 Comment=Let someone else take control of your computer
 Comment[fr]=Laissez quelqu'un d'autre prendre le contrôle de votre ordinateur
 Exec=@LET-ME-DO-POLKIT_PATH@
 Icon=preferences-desktop-remote-desktop
 Terminal=false
 Type=Application
-Categories=Network;
+Categories=Network;RemoteAccess;
