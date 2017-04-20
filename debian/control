@@ -11,6 +11,7 @@ Vcs-Browser: https://github.com/L0L022/let-me-do
 Package: let-me-do
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends},
+         policykit,
          openssh-server,
          iptables,
          xclip,
@@ -20,5 +21,9 @@ Depends: ${shlibs:Depends}, ${misc:Depends},
          gettext
 Suggests: x11-utils
 Description: Let someone else take control of your computer
- Mettre plus de blabla
- Parce que la ça ne va pas du tout
+ This software makes it easy to remotely support Linux-based workstations.
+ .
+ Once launched with administrator rights:
+  - Opens SSH port
+  - Provides VNC access
+  - Creates the let-me-do administrator

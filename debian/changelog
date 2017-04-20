@@ -1,16 +1,10 @@
-let-me-do (0.0+1-0ubuntu2) zesty; urgency=medium
+let-me-do (0.0+2-0ubuntu1) release; urgency=medium
 
-  * Release for zesty
+  * Add translation
 
- -- Loïc Escales <L0L022@openmailbox.org>  Fri, 14 Apr 2017 10:13:52 +0200
+ -- Loïc Escales <L0L022@openmailbox.org>  Thu, 20 Apr 2017 10:25:47 +0200
 
-let-me-do (0.0+1-0ubuntu1) xenial; urgency=medium
-
-  * Release for xenial
-
- -- Loïc Escales <L0L022@openmailbox.org>  Thu, 13 Apr 2017 19:53:02 +0200
-
-let-me-do (0.0+1) yakkety; urgency=medium
+let-me-do (0.0+1-0ubuntu1) release; urgency=medium
 
   * Initial release
 
